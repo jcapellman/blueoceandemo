@@ -1,10 +1,14 @@
 ﻿using System;
-
+using BlueOcean.Common;
 using BlueOcean.ViewModel;
 using Xamarin.Forms;
 
 namespace BlueOcean {
 	public partial class LoginPage : ContentPage {
+	    private LoginModel viewModel {
+	        get { return (LoginModel) BindingContext; }
+	    }
+
 		public LoginPage () {
 			InitializeComponent ();
 
@@ -16,8 +20,14 @@ namespace BlueOcean {
             }));
 		}
 
-        void btnLogin_Clicked(object sender, EventArgs args) {
-            Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+        async void btnLogin_Clicked(object sender, EventArgs args) {
+            var result = await viewModel.AttemptLogin();
+
+            if (result) {
+                Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            } else {
+                DisplayAlert(Constants.APP_NAME, "Invalid Login, try again", "ok");
+            }
         }
 	}
 }

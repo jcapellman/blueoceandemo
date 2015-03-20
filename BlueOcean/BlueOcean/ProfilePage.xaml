@@ -9,5 +9,7 @@
 
         <Label TextColor="#171c9c" Text="password" />
         <Entry TextColor="#171c9c" Text="{Binding Password, Mode=TwoWay}" />
+
+        <Button IsEnabled="{Binding btnUpdateEnabled}" BackgroundColor="#171c9c" Clicked="btnUpdate_Clicked" TextColor="White" x:Name="btnUpdate" Text="Update" />
     </StackLayout>
 </ContentPage>

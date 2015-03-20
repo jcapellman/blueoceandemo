@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
+using System.Threading.Tasks;
+
+using BlueOcean.Models;
 
 namespace BlueOcean.ViewModel {
     public class LoginModel : INotifyPropertyChanged {
@@ -45,8 +47,13 @@ namespace BlueOcean.ViewModel {
             get { return !String.IsNullOrWhiteSpace(Username) && !String.IsNullOrWhiteSpace(Password); }
         }
 
-        public void AttemptLogin() {
-            
+        public async Task<bool> AttemptLogin() {
+            var result = await App.client.GetTable<Users>()
+                    .Where(a => a.Username == Username && a.Password == Password).ToListAsync();
+
+            App.CurrentUser = result.FirstOrDefault();
+
+            return result.Any();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

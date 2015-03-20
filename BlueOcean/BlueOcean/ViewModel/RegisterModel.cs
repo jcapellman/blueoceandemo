@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using BlueOcean.Models;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace BlueOcean.ViewModel {
    public class RegisterModel: INotifyPropertyChanged {
@@ -58,8 +60,16 @@ namespace BlueOcean.ViewModel {
             }
         }
 
-        public void AttemptRegister() {
-            
+       public async void AttemptRegister() {
+            var userTable = App.client.GetTable<Users>();
+
+            await userTable
+                .InsertAsync(new Users {
+                    Created = DateTime.Now,
+                    Modified = DateTime.Now,
+                    Username = Username,
+                    Password = Password
+                });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace BlueOcean.ViewModel
-{
+namespace BlueOcean.ViewModel {
     public class NewsModel : INotifyPropertyChanged {
         private List<NewsResponseItem> _news;
 
