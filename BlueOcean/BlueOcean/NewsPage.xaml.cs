@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BlueOcean.ViewModel;
+﻿using BlueOcean.ViewModel;
 using Xamarin.Forms;
 
 namespace BlueOcean {
@@ -19,5 +14,9 @@ namespace BlueOcean {
 
             viewModel.LoadData();
 		}
+
+        void lvNews_Refreshing(object sender, System.EventArgs e) {
+	        viewModel.LoadData();
+	    }
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using BlueOcean.Models;
+
 using Xamarin.Forms;
 using Microsoft.WindowsAzure.MobileServices;
 
