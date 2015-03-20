@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlueOcean.ProfilePage">
+
+    <StackLayout Padding="10,10,10,10" Orientation="Vertical">
+        <Label TextColor="#171c9c" Text="username" />
+        <Entry TextColor="#171c9c" Text="{Binding Username, Mode=TwoWay}" />
+
+        <Label TextColor="#171c9c" Text="password" />
+        <Entry TextColor="#171c9c" Text="{Binding Password, Mode=TwoWay}" />
+    </StackLayout>
+</ContentPage>
