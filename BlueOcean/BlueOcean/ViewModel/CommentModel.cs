@@ -97,6 +97,8 @@ namespace BlueOcean.ViewModel {
 
            await newsTable.UpdateAsync(newsItem);
 
+           Body = String.Empty;
+
            IsLoading = false;
 
            return true;
