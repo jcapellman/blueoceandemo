@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using BlueOcean.Models;
 
 namespace BlueOcean.ViewModel {
-   public class RegisterModel: INotifyPropertyChanged {
+   public class RegisterModel : INotifyPropertyChanged {
         private bool _isLoading;
 
         public bool IsLoading {

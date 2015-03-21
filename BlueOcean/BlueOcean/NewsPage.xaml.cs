@@ -1,4 +1,5 @@
-﻿using BlueOcean.ViewModel;
+﻿using BlueOcean.Models;
+using BlueOcean.ViewModel;
 using Xamarin.Forms;
 
 namespace BlueOcean {
@@ -16,8 +17,17 @@ namespace BlueOcean {
 		}
 
         void lvNews_Refreshing(object sender, System.EventArgs e) {
-	        viewModel.LoadData();
-             
+	        viewModel.LoadData();    
+	    }
+
+	    private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
+            if (lvNews.SelectedItem == null) {
+                return;
+            }
+
+            App.SelectedNewsID = ((News)lvNews.SelectedItem).id;
+
+            Navigation.PushModalAsync(new NavigationPage(new CommentPage()));
 	    }
 	}
 }

@@ -5,7 +5,7 @@
     <StackLayout Orientation="Vertical">
         <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
 
-        <ListView ItemsSource="{Binding News}" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsLoading}" Refreshing="lvNews_Refreshing" HasUnevenRows="True" >
+        <ListView x:Name="lvNews" ItemsSource="{Binding News}" IsPullToRefreshEnabled="True" ItemSelected="ListView_OnItemSelected" IsRefreshing="{Binding IsLoading}" Refreshing="lvNews_Refreshing" HasUnevenRows="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

@@ -12,7 +12,7 @@ x:Class="BlueOcean.LoginPage">
         <Entry TextColor="#171c9c" Text="{Binding Username, Mode=TwoWay}" x:Name="eUsername" />
 
         <Label TextColor="#171c9c" Text="password" />
-        <Entry TextColor="#171c9c" Text="{Binding Password, Mode=TwoWay}" x:Name="ePassword" />
+        <Entry TextColor="#171c9c" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" x:Name="ePassword" />
 
         <Button IsEnabled="{Binding btnLoginEnabled}" BackgroundColor="#171c9c" Clicked="btnLogin_Clicked" TextColor="White" x:Name="btnLogin" Text="Login" />
     </StackLayout>

@@ -11,10 +11,10 @@
         <Entry TextColor="#171c9c" Text="{Binding Username, Mode=TwoWay}" />
 
         <Label TextColor="#171c9c" Text="password" />
-        <Entry TextColor="#171c9c" Text="{Binding Password, Mode=TwoWay}" />
+        <Entry TextColor="#171c9c" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" />
 
         <Label TextColor="#171c9c" Text="confirm password" />
-        <Entry TextColor="#171c9c" Text="{Binding ConfirmPassword, Mode=TwoWay}" />
+        <Entry TextColor="#171c9c" IsPassword="True" Text="{Binding ConfirmPassword, Mode=TwoWay}" />
 
         <Button IsEnabled="{Binding btnRegisterEnabled}" BackgroundColor="#171c9c" Clicked="btnRegister_Clicked" TextColor="White" x:Name="btnRegister" Text="Register" />
     </StackLayout>

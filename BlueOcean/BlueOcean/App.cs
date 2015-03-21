@@ -12,6 +12,8 @@ namespace BlueOcean {
 
         public static Users CurrentUser { get; set; }
 
+        public static string SelectedNewsID { get; set; }
+
 		public App () {
 		    MainPage = new NavigationPage(new LoginPage());
 		}
