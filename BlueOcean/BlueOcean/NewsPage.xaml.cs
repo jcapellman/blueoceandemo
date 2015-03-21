@@ -17,6 +17,7 @@ namespace BlueOcean {
 
         void lvNews_Refreshing(object sender, System.EventArgs e) {
 	        viewModel.LoadData();
+             
 	    }
 	}
 }

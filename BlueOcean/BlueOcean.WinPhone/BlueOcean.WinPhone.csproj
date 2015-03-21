@@ -124,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.png" />
-    <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

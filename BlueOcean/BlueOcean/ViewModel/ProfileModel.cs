@@ -1,12 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
+
 using BlueOcean.Models;
 
 namespace BlueOcean.ViewModel {
     public class ProfileModel : INotifyPropertyChanged {
+        private bool _isLoading;
+
+        public bool IsLoading {
+            get { return _isLoading; }
+            set { _isLoading = value; OnPropertyChanged(); }
+        }
+
         private string _username;
 
         public string Username {
@@ -50,10 +56,14 @@ namespace BlueOcean.ViewModel {
         }
 
         public async void UpdateProfile() {
+            IsLoading = true;
+
             App.CurrentUser.Username = Username;
             App.CurrentUser.Password = Password;
 
             await App.client.GetTable<Users>().UpdateAsync(App.CurrentUser);
+
+            IsLoading = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

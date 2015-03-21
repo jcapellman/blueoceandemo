@@ -4,6 +4,8 @@
              x:Class="BlueOcean.ProfilePage">
 
     <StackLayout Padding="10,10,10,10" Orientation="Vertical">
+        <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+
         <Label TextColor="#171c9c" Text="username" />
         <Entry TextColor="#171c9c" Text="{Binding Username, Mode=TwoWay}" />
 

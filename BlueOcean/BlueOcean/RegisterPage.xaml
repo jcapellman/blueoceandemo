@@ -4,7 +4,9 @@
              x:Class="BlueOcean.RegisterPage">
     <StackLayout Padding="10,10,10,10" Orientation="Vertical">
         <Label TextColor="#171c9c" FontSize="20" Text="Blue Ocean Registration"></Label>
-        
+
+        <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+
         <Label TextColor="#171c9c" Text="username" />
         <Entry TextColor="#171c9c" Text="{Binding Username, Mode=TwoWay}" />
 

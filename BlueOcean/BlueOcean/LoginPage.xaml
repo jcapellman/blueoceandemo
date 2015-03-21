@@ -2,8 +2,11 @@
 <ContentPage BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="BlueOcean.LoginPage">
+    
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
         <Image Source="Logo.png" />
+
+        <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
 
         <Label TextColor="#171c9c" Text="username" />
         <Entry TextColor="#171c9c" Text="{Binding Username, Mode=TwoWay}" x:Name="eUsername" />

@@ -2,19 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlueOcean.NewsPage">
-    <ListView ItemsSource="{Binding News}" IsPullToRefreshEnabled="True" Refreshing="lvNews_Refreshing" HasUnevenRows="True" >
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <ViewCell.View>
-                        <StackLayout Padding="10,10,10,20" Orientation="Vertical">
-                            <Label TextColor="#171c9c" FontSize="20" Text="{Binding Header}" />
-                            <Label TextColor="#171c9c" FontSize="16" Text="{Binding PostDate}" />
-                            <Label LineBreakMode="WordWrap"  TextColor="#171c9c" FontSize="14" Text="{Binding Content}" />
-                        </StackLayout>
-                    </ViewCell.View>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout Orientation="Vertical">
+        <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+
+        <ListView ItemsSource="{Binding News}" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsLoading}" Refreshing="lvNews_Refreshing" HasUnevenRows="True" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="10,10,10,20" Orientation="Vertical">
+                                <Label TextColor="#171c9c" FontSize="20" Text="{Binding Title}" />
+                                <Label TextColor="#171c9c" FontSize="16" Text="{Binding PublishDate}" />
+                                <Label LineBreakMode="WordWrap"  TextColor="#171c9c" FontSize="14" Text="{Binding Body}" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

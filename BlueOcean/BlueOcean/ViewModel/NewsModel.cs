@@ -6,6 +6,13 @@ using BlueOcean.Models;
 
 namespace BlueOcean.ViewModel {
     public class NewsModel : INotifyPropertyChanged {
+        private bool _isLoading;
+
+        public bool IsLoading {
+            get { return _isLoading; }
+            set { _isLoading = value; OnPropertyChanged(); }
+        }
+
         private List<News> _news;
 
         public List<News> News {
@@ -18,7 +25,11 @@ namespace BlueOcean.ViewModel {
         }
 
         public async void LoadData() {
+            IsLoading = true;
+
             News = await App.client.GetTable<News>().OrderByDescending(a => a.PublishDate).ToListAsync();
+
+            IsLoading = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

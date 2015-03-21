@@ -1,11 +1,18 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+
 using BlueOcean.Models;
-using Microsoft.WindowsAzure.MobileServices;
 
 namespace BlueOcean.ViewModel {
    public class RegisterModel: INotifyPropertyChanged {
+        private bool _isLoading;
+
+        public bool IsLoading {
+            get { return _isLoading; }
+            set { _isLoading = value; OnPropertyChanged(); }
+        }
+
         private string _username;
 
         public string Username {
@@ -61,6 +68,8 @@ namespace BlueOcean.ViewModel {
         }
 
        public async void AttemptRegister() {
+           IsLoading = true;
+
             var userTable = App.client.GetTable<Users>();
 
             await userTable
@@ -70,7 +79,9 @@ namespace BlueOcean.ViewModel {
                     Username = Username,
                     Password = Password
                 });
-        }
+
+           IsLoading = false;
+       }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

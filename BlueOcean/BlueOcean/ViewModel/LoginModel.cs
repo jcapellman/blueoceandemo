@@ -8,6 +8,13 @@ using BlueOcean.Models;
 
 namespace BlueOcean.ViewModel {
     public class LoginModel : INotifyPropertyChanged {
+        private bool _isLoading;
+
+        public bool IsLoading {
+            get { return _isLoading; }
+            set { _isLoading = value; OnPropertyChanged(); }
+        }
+
         private string _username;
 
         public string Username {
@@ -48,10 +55,13 @@ namespace BlueOcean.ViewModel {
         }
 
         public async Task<bool> AttemptLogin() {
+            IsLoading = true;
             var result = await App.client.GetTable<Users>()
                     .Where(a => a.Username == Username && a.Password == Password).ToListAsync();
 
             App.CurrentUser = result.FirstOrDefault();
+
+            IsLoading = false;
 
             return result.Any();
         }
