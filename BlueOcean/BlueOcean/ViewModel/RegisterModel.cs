@@ -67,8 +67,8 @@ namespace BlueOcean.ViewModel {
             }
         }
 
-       public async void AttemptRegister() {
-           IsLoading = true;
+        public async void AttemptRegister() {
+            IsLoading = true;
 
             var userTable = App.client.GetTable<Users>();
 
@@ -80,8 +80,8 @@ namespace BlueOcean.ViewModel {
                     Password = Password
                 });
 
-           IsLoading = false;
-       }
+            IsLoading = false;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

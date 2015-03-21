@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="BlueOcean.CommentPage">
     <StackLayout Orientation="Vertical" Padding="10,10,10,10" HorizontalOptions="Center">
@@ -11,9 +11,9 @@ x:Class="BlueOcean.CommentPage">
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout Padding="10,10,10,20" Orientation="Vertical">
-                                <Label TextColor="#171c9c" FontSize="20" Text="{Binding username}" />
-                                <Label TextColor="#171c9c" FontSize="16" Text="{Binding publishdate}" />
-                                <Label LineBreakMode="WordWrap"  TextColor="#171c9c" FontSize="14" Text="{Binding body}" />
+                                <Label FontSize="20" Text="{Binding username}" />
+                                <Label FontSize="16" Text="{Binding publishdate}" />
+                                <Label LineBreakMode="WordWrap" FontSize="14" Text="{Binding body}" />
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
@@ -21,8 +21,8 @@ x:Class="BlueOcean.CommentPage">
             </ListView.ItemTemplate>
         </ListView>
 
-        <Label TextColor="#171c9c" Text="new comment" />
-        <Editor BackgroundColor="#171c9c" Text="{Binding Body, Mode=TwoWay}" />
+        <Label Text="new comment" />
+        <Editor Text="{Binding Body, Mode=TwoWay}" />
         
         <Button IsEnabled="{Binding btnPostEnabled}" BackgroundColor="#171c9c" Clicked="btnPost_Clicked" TextColor="White" x:Name="btnPost" Text="Post" />
     </StackLayout>

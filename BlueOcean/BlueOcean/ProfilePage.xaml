@@ -6,12 +6,12 @@
     <StackLayout Padding="10,10,10,10" Orientation="Vertical">
         <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
 
-        <Label TextColor="#171c9c" Text="username" />
-        <Entry TextColor="#171c9c" Text="{Binding Username, Mode=TwoWay}" />
+        <Label Text="username" />
+        <Entry Text="{Binding Username, Mode=TwoWay}" />
 
-        <Label TextColor="#171c9c" Text="password" />
-        <Entry TextColor="#171c9c" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" />
+        <Label Text="password" />
+        <Entry IsPassword="True" Text="{Binding Password, Mode=TwoWay}" />
 
-        <Button IsEnabled="{Binding btnUpdateEnabled}" BackgroundColor="#171c9c" Clicked="btnUpdate_Clicked" TextColor="White" x:Name="btnUpdate" Text="Update" />
+        <Button IsEnabled="{Binding btnUpdateEnabled}" Clicked="btnUpdate_Clicked" x:Name="btnUpdate" Text="Update" />
     </StackLayout>
 </ContentPage>
