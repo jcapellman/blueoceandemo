@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+
 using BlueOcean.Models;
 
 namespace BlueOcean.ViewModel {
@@ -77,6 +78,24 @@ namespace BlueOcean.ViewModel {
                     userid = App.CurrentUser.id,
                     newsid = App.SelectedNewsID
                 });
+
+           var newsTable = App.client.GetTable<News>();
+
+           var newsItems = await newsTable.Where(a => a.id == App.SelectedNewsID).ToListAsync();
+
+           if (!newsItems.Any()) {
+               return false;
+           }
+
+           var newsItem = newsItems.FirstOrDefault();
+
+           if (newsItem == null) {
+               return false;
+           }
+           
+           newsItem.CommentCount++;
+
+           await newsTable.UpdateAsync(newsItem);
 
            IsLoading = false;
 

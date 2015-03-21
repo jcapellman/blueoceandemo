@@ -13,6 +13,8 @@
                             <StackLayout Padding="10,10,10,20" Orientation="Vertical">
                                 <Label TextColor="#171c9c" FontSize="20" Text="{Binding Title}" />
                                 <Label TextColor="#171c9c" FontSize="16" Text="{Binding PublishDate}" />
+                                
+                                <Label TextColor="#171c9c" FontSize="16" FontAttributes="Bold" Text="{Binding CommentCount, StringFormat='{0} comment(s)'}" />
                                 <Label LineBreakMode="WordWrap"  TextColor="#171c9c" FontSize="14" Text="{Binding Body}" />
                             </StackLayout>
                         </ViewCell.View>
