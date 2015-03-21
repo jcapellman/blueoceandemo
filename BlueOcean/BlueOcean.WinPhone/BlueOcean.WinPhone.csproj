@@ -125,6 +125,8 @@
   <ItemGroup>
     <Content Include="Background.jpg" />
     <Content Include="Logo.png" />
+    <Content Include="logout.png" />
+    <Content Include="register.png" />
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

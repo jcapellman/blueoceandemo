@@ -103,10 +103,10 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Background.jpg" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Drawable\Logo.png" />
     <AndroidResource Include="Resources\Drawable\news.png" />
+    <AndroidResource Include="Resources\Drawable\Background.jpg" />
   </ItemGroup>
   <Import Project="..\BlueOcean\BlueOcean.projitems" Label="Shared" Condition="Exists('..\BlueOcean\BlueOcean.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿using System;
+
 using BlueOcean.Common;
 using BlueOcean.ViewModel;
 using Xamarin.Forms;
@@ -15,7 +16,7 @@ namespace BlueOcean {
 		    BindingContext = new LoginModel();
 
 		    this.ToolbarItems.Clear();
-            this.ToolbarItems.Add(new ToolbarItem("register", "", delegate {
+            this.ToolbarItems.Add(new ToolbarItem("register", (Device.OS == TargetPlatform.WinPhone ? "register.png" : ""), delegate {
                 Navigation.PushModalAsync(new NavigationPage(new RegisterPage()));
             }));
 		}

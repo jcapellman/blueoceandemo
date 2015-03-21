@@ -9,7 +9,7 @@ namespace BlueOcean {
             this.Children.Add(new ProfilePage { Title = "Profile", Icon = "News.png"});
 
             this.ToolbarItems.Clear();
-            this.ToolbarItems.Add(new ToolbarItem("logout", "", delegate {
+            this.ToolbarItems.Add(new ToolbarItem("logout", (Device.OS == TargetPlatform.WinPhone ? "logout.png" : ""), delegate {
                 Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
             }));
 		}
